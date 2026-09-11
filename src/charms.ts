@@ -102,6 +102,26 @@ export const DEFAULT_CHARMS: Charm[] = [
     actionLabel: "Stare it down",
   },
   {
+    id: "drishti-bommai-garland",
+    emoji: "👺",
+    name: "Drishti bommai (garland)",
+    ritual: "ward",
+    region: "India",
+    description:
+      "The fierce face paired with its own nimbu-mirchi garland, doubled protection hung on one thread. Give it a stare and let it take the gaze for you.",
+    actionLabel: "Stare it down",
+  },
+  {
+    id: "nimbu-mirchi-photo",
+    emoji: "🌶️🍋",
+    name: "Nimbu-mirchi (photo)",
+    ritual: "ward",
+    region: "India",
+    description:
+      "Seven chilies and a lemon hung at the threshold to turn away misfortune. Replace it with a fresh one when the week is up.",
+    actionLabel: "Hang a fresh garland",
+  },
+  {
     id: "panchang-jie",
     emoji: "🪢",
     name: "Pánchángjié",
