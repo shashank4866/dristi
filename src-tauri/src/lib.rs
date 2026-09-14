@@ -33,6 +33,11 @@ fn set_force_interactive(state: tauri::State<SharedHitState>, active: bool) {
 }
 
 #[tauri::command]
+fn quit_app(app: tauri::AppHandle) {
+    app.exit(0);
+}
+
+#[tauri::command]
 fn get_stage_size(window: WebviewWindow) -> (f64, f64) {
     if let Ok(Some(monitor)) = window.current_monitor() {
         let scale = monitor.scale_factor();
@@ -138,7 +143,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             update_hit_points,
             set_force_interactive,
-            get_stage_size
+            get_stage_size,
+            quit_app
         ])
         .setup(move |app| {
             let window = app.get_webview_window("main").expect("main window must exist");

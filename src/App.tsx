@@ -12,6 +12,7 @@ const MAX_TILT_DEG = 22;
 const ANCHOR_Y = 8;
 const CHARM_INDEX = 6;
 const MARGIN = 26;
+const CLOSE_MARGIN = 22;
 
 function loadCharm(): Charm {
   try {
@@ -78,6 +79,7 @@ export default function App() {
           points: [
             [tip.x, tip.y],
             [anchorXRef.current, ANCHOR_Y],
+            [stage.width - CLOSE_MARGIN, CLOSE_MARGIN],
           ],
         }).catch(() => {});
       }
@@ -205,6 +207,10 @@ export default function App() {
     setForceInteractive(false);
   };
 
+  const quitApp = () => {
+    invoke("quit_app").catch(() => {});
+  };
+
   if (!stage) return null;
 
   const rope = pointsRef.current;
@@ -229,6 +235,17 @@ export default function App() {
         onPointerUp={onAnchorPointerUp}
         title="Drag to move along the top"
       />
+
+      <button
+        className="close-handle"
+        style={{ left: stage.width - CLOSE_MARGIN, top: CLOSE_MARGIN }}
+        onPointerDown={(e) => e.stopPropagation()}
+        onClick={quitApp}
+        title="Quit DeskCharm"
+        aria-label="Quit DeskCharm"
+      >
+        ×
+      </button>
 
       {activeRitual === "sparkle" && (
         <div className="sparkle-burst" style={{ left: charmPos.x, top: charmPos.y }}>
