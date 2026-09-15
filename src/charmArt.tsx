@@ -3,6 +3,7 @@ import type { Charm } from "./charms";
 import drishtiBommaiFaceImg from "./assets/drishti-bommai-face.png";
 import drishtiBommaiGarlandImg from "./assets/drishti-bommai-garland.png";
 import nimbuMirchiPhotoImg from "./assets/nimbu-mirchi.png";
+import nazarPhotoImg from "./assets/nazar.png";
 
 function NimbuMirchiArt({ size }: { size: number }) {
   const height = size * 1.5;
@@ -74,6 +75,7 @@ const CUSTOM_ART: Record<string, (props: { size: number }) => ReactElement> = {
   "drishti-bommai": imageArt(drishtiBommaiFaceImg, "Drishti bommai"),
   "drishti-bommai-garland": imageArt(drishtiBommaiGarlandImg, "Drishti bommai with garland", 1.5),
   "nimbu-mirchi-photo": imageArt(nimbuMirchiPhotoImg, "Nimbu-mirchi", 1.5),
+  "nazar-photo": imageArt(nazarPhotoImg, "Nazar Boncuğu", 1.3),
 };
 
 export function CharmGlyph({ charm, size }: { charm: Charm; size: number }) {

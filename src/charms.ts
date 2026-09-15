@@ -22,6 +22,16 @@ export const DEFAULT_CHARMS: Charm[] = [
     actionLabel: "Spin it once",
   },
   {
+    id: "nazar-photo",
+    emoji: "🧿",
+    name: "Nazar Boncuğu (photo)",
+    ritual: "ward",
+    region: "Turkey & the Levant",
+    description:
+      "A blue glass eye, layered like a gaze fixed back at the world. Give it a spin to send envy back where it came from.",
+    actionLabel: "Spin it once",
+  },
+  {
     id: "hamsa",
     emoji: "🪬",
     name: "Hamsa",
